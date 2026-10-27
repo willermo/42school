@@ -1,0 +1,68 @@
+version: "3.8"
+
+services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb:doriani42
+    build: ./requirements/mariadb/.
+    env_file:
+      - .env
+    networks:
+      - inception
+    expose:
+      - 3306
+    volumes:
+      - mariadb:/var/lib/mysql
+    restart: always
+
+  wordpress:
+    container_name: wordpress
+    image: wordpress:doriani42
+    build: ./requirements/wordpress/.
+    depends_on:
+      - mariadb
+    env_file:
+      - .env
+    networks:
+      - inception
+    expose:
+      - 9000
+    volumes:
+      - wordpress:/var/www/inception
+    restart: always
+
+  nginx:
+    container_name: nginx
+    image: nginx:doriani42
+    build: ./requirements/nginx/.
+    depends_on:
+      - wordpress
+    env_file:
+      - .env
+    networks:
+      - inception
+    ports:
+      - "443:443"
+    volumes:
+      - wordpress:/var/www/inception
+    restart: always
+
+volumes:
+  wordpress:
+    name: wordpress
+    driver: local
+    driver_opts:
+      device: /home/doriani/data/wordpress
+      o: bind
+      type: none
+  mariadb:
+    name: mariadb
+    driver: local
+    driver_opts:
+      device: /home/doriani/data/mariadb
+      o: bind
+      type: none
+
+networks:
+  inception:
+    name: inception

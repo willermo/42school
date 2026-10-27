@@ -1,0 +1,31 @@
+server {
+	listen 443 ssl;
+	listen [::]:443 ssl;
+	ssl_protocols TLSv1.3;
+	ssl_certificate /etc/nginx/ssl/inception.crt;
+	ssl_certificate_key /etc/nginx/ssl/inception.key;
+
+	root /var/www/inception;
+	server_name doriani.42.fr www.doriani.42.fr;
+	index index.php index.html index.htm;
+
+	access_log /var/log/nginx/inception/access.log;
+	error_log /var/log/nginx/inception/error.log;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass wordpress:9000;
+		include fastcgi_params;
+		fastcgi_intercept_errors on;
+	}
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    return 444;
+}

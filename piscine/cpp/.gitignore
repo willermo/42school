@@ -1,0 +1,75 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Misc
+.vscode
+.DS_Store
+
+# Program filenames
+CPP00/ex00/megaphone
+CPP00/ex01/phonebook
+CPP00/ex02/banksters
+CPP01/ex00/brainz
+CPP01/ex01/horde
+CPP01/ex02/brain
+CPP01/ex03/violence
+CPP01/ex04/sedloser
+CPP01/ex05/harl
+CPP01/ex06/harlFilter
+CPP02/ex00/fixed
+CPP02/ex01/fixed
+CPP02/ex02/fixed
+CPP02/ex03/bsp
+CPP03/ex00/claptrap
+CPP03/ex01/claptrap
+CPP03/ex02/claptrap
+CPP03/ex03/claptrap
+CPP04/ex00/animal
+CPP04/ex01/animal
+CPP04/ex02/animal
+CPP04/ex03/amateria
+CPP05/ex00/bureaucrat
+CPP05/ex01/bureaucrat
+CPP05/ex02/bureaucrat
+CPP06/ex00/convert
+CPP06/ex01/serializer
+CPP06/ex02/basegen
+CPP07/ex00/whatever
+CPP07/ex01/iter
+CPP07/ex02/array
+CPP08/ex00/easyfind
+CPP08/ex01/span
+CPP08/ex02/mutantstack
+CPP09/ex00/btc
+CPP09/ex01/RPN
+CPP09/ex02/PmergeMe

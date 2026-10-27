@@ -1,0 +1,7 @@
+# Core dependencies
+pandas==2.3.3
+numpy==2.3.4
+matplotlib==3.10.7
+
+# Evaluation (used by evaluate.py to mirror the evaluator's sklearn accuracy_score)
+scikit-learn==1.7.1

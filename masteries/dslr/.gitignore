@@ -1,0 +1,10 @@
+__pycache__
+.venv
+.ipynb_checkpoints
+figures
+homogeneity_report.csv
+*.png
+
+# Generated outputs (recreated by running the scripts)
+weights*.json
+houses.csv
